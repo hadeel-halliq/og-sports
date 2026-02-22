@@ -12,16 +12,21 @@ export default function Header() {
   const isDarkHeader = pathname === "/cart" || pathname === "/notifications";
   const headerBg = isDarkHeader ? "bg-secondary" : "bg-primary";
   const logo = isDarkHeader ? whiteLogo : blackLogo;
-
+  const iconStyle = "w-9 h-9";
   return (
-    <div className={`${headerBg} flex justify-between`}>
-      <div>
-        <img src={profilePic} alt="profilePic" />
-        <img src={cart} alt="cartIcon" />
-        <img src={notification} alt="notifictionIcon" />
+    <div className={`${headerBg}`}>
+      <div className="container mx-auto py-4 px-12 flex justify-between ">
+        <div className="flex gap-16 items-center">
+          <div className="flex gap-3 items-center">
+            <img src={profilePic} alt="profilePic" className="w-12 " />
+            <img src={cart} alt="cartIcon" className={iconStyle} />
+            <img src={notification} alt="notifictionIcon" className={iconStyle} />
+          </div>
+          <NavBar />
+        </div>
+        <img src={logo} alt="logo" className="w-30" />
       </div>
-      <NavBar />
-      <img src={logo} alt="logo" />
-    </div>
+  </div>
+
   )
 }

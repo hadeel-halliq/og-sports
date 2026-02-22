@@ -4,19 +4,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const navItems = [
-  { name: "Home", to: "/" },
-  { name: "About", to: "/about" },
+  { name: "اتصل بنا", to: "/contact" },
   {
-    name: "Products",
+    name: "المنتجات",
     icon: <ChevronDown size={18} />,
     children: [
-      { name: "Men Products", to: "/products?category=men" },
-      { name: "Women Products", to: "/products?category=women" },
-      { name: "Children Products", to: "/products?category=children" },
+      { name: "منتجات الرجال", to: "/products?category=men" },
+      { name: "منتجات النساء", to: "/products?category=women" },
+      { name: "منتجات الأطفال", to: "/products?category=children" },
     ],
   },
-  { name: "Contact", to: "/contact" },
+  { name: "من نحن", to: "/about" },
+  { name: "الرئيسية", to: "/" },
 ];
+
+const mobilenavItems = [...navItems].reverse();
 
 export default function NavBar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -40,7 +42,12 @@ export default function NavBar() {
                   className="flex items-center gap-1 font-bold text-gray-700"
                 >
                   {item.name}
-                  {item.icon}
+                  <motion.span
+                    animate={{ rotate: openDropdown === "products" ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <ChevronDown size={18} />
+                  </motion.span>
                 </button>
 
                 <AnimatePresence>
@@ -53,14 +60,21 @@ export default function NavBar() {
                       className="absolute left-0 mt-3 w-56 bg-white shadow-xl rounded-lg overflow-hidden"
                     >
                       {item.children.map((subItem, i) => (
-                        <NavLink
+                        <motion.div
                           key={i}
-                          to={subItem.to}
-                          onClick={() => setOpenDropdown(null)}
-                          className="block px-4 py-3 hover:bg-gray-100 transition"
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ delay: i * 0.1 }}
                         >
-                          {subItem.name}
-                        </NavLink>
+                          <NavLink
+                            to={subItem.to}
+                            onClick={() => setOpenDropdown(null)}
+                            className="block px-4 py-3 hover:bg-gray-100 transition"
+                          >
+                            {subItem.name}
+                          </NavLink>
+                        </motion.div>
                       ))}
                     </motion.div>
                   )}
@@ -75,8 +89,7 @@ export default function NavBar() {
               key={index}
               to={item.to}
               className={({ isActive }) =>
-                `font-bold ${
-                  isActive ? "text-primary" : "text-gray-700"
+                `font-bold ${isActive ? "text-orange" : "text-secondary"
                 }`
               }
             >
@@ -90,11 +103,12 @@ export default function NavBar() {
       <div className="lg:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="text-2xl p-2"
+          className="text-2xl p-2 cursor-pointer"
         >
           {isMobileOpen ? <X /> : <TextAlignJustify />}
         </button>
       </div>
+
 
       {/* ===== Mobile Menu ===== */}
       <AnimatePresence>
@@ -106,7 +120,7 @@ export default function NavBar() {
             transition={{ duration: 0.3 }}
             className="absolute right-0 mt-3 w-64 bg-white shadow-2xl rounded-xl p-4 space-y-2 lg:hidden"
           >
-            {navItems.map((item, index) => {
+            {mobilenavItems.map((item, index) => {
               if (item.children) {
                 return (
                   <div key={index}>
@@ -119,26 +133,46 @@ export default function NavBar() {
                       className="flex justify-between w-full py-2 font-bold"
                     >
                       {item.name}
-                      {item.icon}
+                      <motion.span
+                        animate={{ rotate: openDropdown === "products" ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDown size={18} />
+                      </motion.span>
                     </button>
 
-                    {openDropdown === "products" && (
-                      <div className="ml-3 mt-2 space-y-2">
-                        {item.children.map((subItem, i) => (
-                          <NavLink
-                            key={i}
-                            to={subItem.to}
-                            onClick={() => {
-                              setIsMobileOpen(false);
-                              setOpenDropdown(null);
-                            }}
-                            className="block py-2 text-gray-600"
-                          >
-                            {subItem.name}
-                          </NavLink>
-                        ))}
-                      </div>
-                    )}
+                    <AnimatePresence>
+                      {openDropdown === "products" && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="ml-3 mt-2 space-y-2 overflow-hidden"
+                        >
+                          {item.children.map((subItem, i) => (
+                            <motion.div
+                              key={i}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -10 }}
+                              transition={{ delay: i * 0.1 }}
+                            >
+                              <NavLink
+                                to={subItem.to}
+                                onClick={() => {
+                                  setIsMobileOpen(false);
+                                  setOpenDropdown(null);
+                                }}
+                                className="block py-2 text-gray-600"
+                              >
+                                {subItem.name}
+                              </NavLink>
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 );
               }
@@ -148,7 +182,10 @@ export default function NavBar() {
                   key={index}
                   to={item.to}
                   onClick={() => setIsMobileOpen(false)}
-                  className="block py-2 font-bold"
+                  className={({ isActive }) =>
+                    `block py-2 font-bold ${isActive ? "text-orange" : "text-secondary"
+                    }`
+                  }
                 >
                   {item.name}
                 </NavLink>
