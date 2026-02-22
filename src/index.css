@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Almarai", sans-serif;
+}
+
+@theme  {
+  --color-primary: #fff;
+  --color-secondary: #0f0f0f;
+  --color-orange: rgba(245, 132, 4, 1);
+}
