@@ -17,7 +17,7 @@ export default function Header() {
     }`;
   
   return (
-    <div className={`${headerBg}`}>
+    <div className={`${headerBg} fixed top-4 left-0 w-full z-50`}>
       <div className="container mx-auto py-4 px-12 flex justify-between ">
         <div className="flex gap-2 lg:gap-16 items-center">
           <div className="flex gap-3 items-center">
