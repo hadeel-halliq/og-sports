@@ -11,7 +11,11 @@ const navItems = [
     children: [
       { name: "منتجات الرجال", to: "/products?category=men" },
       { name: "منتجات النساء", to: "/products?category=women" },
-      { name: "منتجات الأطفال", to: "/products?category=children" },
+      { name: "كل جديد", to: "/products?category=news" },
+      { name: "العروض", to: "/products?category=offers" },
+      { name: "معدات", to: "/products?category=equipment" },
+      { name: "اكسسوارات", to: "/products?category=accessories" },
+      { name: "مفرق وجملة", to: "/products?category=wholesaleunitsale" },
     ],
   },
   { name: "من نحن", to: "/about" },
@@ -138,14 +142,14 @@ export default function NavBar() {
                           openDropdown === "products" ? null : "products"
                         )
                       }
-                      className="flex justify-between w-full py-2 font-bold"
+                      className="flex justify-between w-full py-2 font-bold cursor-pointer"
                     >
                       {item.name}
                       <motion.span
                         animate={{ rotate: openDropdown === "products" ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <ChevronDown size={18} />
+                        <ChevronDown size={18}  />
                       </motion.span>
                     </button>
 
@@ -156,7 +160,7 @@ export default function NavBar() {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="ml-3 mt-2 space-y-2 overflow-hidden"
+                          className="ml-3 mt-2 space-y-2 overflow-hidden "
                         >
                           {item.children.map((subItem, i) => (
                             <motion.div
