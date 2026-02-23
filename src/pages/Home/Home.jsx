@@ -1,6 +1,12 @@
+import HeroSection from "./components/HeroSection";
+import ShopByCategory from "./components/ShopByCategory";
+
 export default function Home() {
     return (
-        <div>Home Page</div>
+        <div className="z-20">
+            <HeroSection/>
+            <ShopByCategory/>
+        </div>
     )
 }
 
