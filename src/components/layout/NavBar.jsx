@@ -1,5 +1,5 @@
 import { ChevronDown, X, TextAlignJustify } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
@@ -23,11 +23,16 @@ const mobilenavItems = [...navItems].reverse();
 export default function NavBar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const { pathname } = useLocation();
+  const isDarkHeader = pathname === "/cart" || pathname === "/notifications";
+  const navLinksColor = isDarkHeader ? "text-primary" : "text-secondary";
+  const mobileIconColor = isDarkHeader ? "text-primary" : "text-secondary";
+  const mobileLinksColor = "text-black";
 
   return (
     <div className="relative">
       {/* ===== Desktop ===== */}
-      <ul className="hidden lg:flex gap-6 items-center">
+      <ul className="hidden lg:flex gap-6 items-center coursor-pointer">
         {navItems.map((item, index) => {
           // إذا العنصر عنده children → dropdown
           if (item.children) {
@@ -39,7 +44,7 @@ export default function NavBar() {
                       openDropdown === "products" ? null : "products"
                     )
                   }
-                  className="flex items-center gap-1 font-bold text-gray-700"
+                  className={`flex items-center gap-1 font-bold cursor-pointer ${navLinksColor}`}
                 >
                   {item.name}
                   <motion.span
@@ -89,7 +94,10 @@ export default function NavBar() {
               key={index}
               to={item.to}
               className={({ isActive }) =>
-                `font-bold ${isActive ? "text-orange" : "text-secondary"
+                `font-bold ${
+                  isActive
+                    ? "text-orange-500" 
+                    : navLinksColor  
                 }`
               }
             >
@@ -103,7 +111,7 @@ export default function NavBar() {
       <div className="lg:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="text-2xl p-2 cursor-pointer"
+          className={`text-2xl p-2 cursor-pointer ${mobileIconColor}`}
         >
           {isMobileOpen ? <X /> : <TextAlignJustify />}
         </button>
@@ -118,7 +126,7 @@ export default function NavBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-0 mt-3 w-64 bg-white shadow-2xl rounded-xl p-4 space-y-2 lg:hidden"
+            className="absolute right-[-80px] mt-3 w-64 bg-white shadow-2xl rounded-xl p-4 space-y-2 lg:hidden"
           >
             {mobilenavItems.map((item, index) => {
               if (item.children) {
@@ -164,7 +172,13 @@ export default function NavBar() {
                                   setIsMobileOpen(false);
                                   setOpenDropdown(null);
                                 }}
-                                className="block py-2 text-gray-600"
+                                className={({ isActive }) =>
+                                  `block py-2 font-medium ${
+                                    isActive
+                                      ? "text-orange-500" 
+                                      : mobileLinksColor  
+                                  }`
+                                }
                               >
                                 {subItem.name}
                               </NavLink>
@@ -183,7 +197,10 @@ export default function NavBar() {
                   to={item.to}
                   onClick={() => setIsMobileOpen(false)}
                   className={({ isActive }) =>
-                    `block py-2 font-bold ${isActive ? "text-orange" : "text-secondary"
+                    `block py-2 font-bold ${
+                      isActive
+                        ? "text-orange-500" 
+                        : mobileLinksColor 
                     }`
                   }
                 >
