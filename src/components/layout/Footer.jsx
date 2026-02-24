@@ -61,6 +61,9 @@ export default function Footer() {
           ))}
         </div>
       </div>
+      {/* <div className="pt-5 flex ... border-b border-white pb-6"></div> */}
+      <div className="w-10/12 h-[1px] bg-white mt-6 mx-auto"></div>
+      <p className="text-center text-primary mt-6 pb-6" dir="rtl">© 2026 متجر سبوتيفاي. حميع الحقوق محفوظة</p>
     </div>
   );
 }
