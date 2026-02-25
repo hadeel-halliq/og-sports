@@ -1,5 +1,9 @@
+import HeroSection from "./components/HeroSection";
+
 export default function AboutUs() {
     return (
-        <div>AboutUs Page</div>
+        <div className="z-20">
+            <HeroSection/>
+        </div>
     )
 }

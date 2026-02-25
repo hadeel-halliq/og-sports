@@ -72,7 +72,7 @@ export default function HeroSection() {
               {slides[index].description}
             </p>
 
-            <Button buttonName={slides[index].buttonText} />
+            <Button buttonName={slides[index].buttonText} buttonColor="white"/>
           </motion.div>
         </AnimatePresence>
       </div>
