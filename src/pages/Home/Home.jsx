@@ -2,6 +2,7 @@ import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import ShopByCategory from "./components/ShopByCategory";
 import SpecialProducts from "./components/SpecialProducts";
+import AllProducts from "./components/AllProducts";
 
 export default function Home() {
     return (
@@ -10,13 +11,9 @@ export default function Home() {
             <ShopByCategory/>
             <AboutSection/>
             <SpecialProducts/>
+            <AllProducts/>
+           
         </div>
     )
 }
 
-
-{/* <div className="relative"> */}
-{/* <div
-        className="bg-cover bg-center bg-no-repeat w-full min-h-screen"
-        style={{ backgroundImage: `url(${home})` }}
-      ></div> */}

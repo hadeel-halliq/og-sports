@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "../../../components/common/Button";
 
-export default function SpecialProductCard({ imgSrc, productName, productDescription, dollarPrice, syrianPrice }) {
+export default function ProductCard({ imgSrc, productName, productDescription, dollarPrice, syrianPrice }) {
   const navigate = useNavigate();
 
   return (

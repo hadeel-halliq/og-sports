@@ -73,7 +73,7 @@ export default function SpecialProducts() {
   return (
     <div className="container relative mx-auto px-12 pb-12 overflow-hidden">
       <div className="relative py-8 px-4">
-        <h2 className="font-bold text-2xl pb-8 text-right" dir="rtl">المنتجات المميزة</h2>
+        <h2 className="font-bold text-2xl pb-8 text-right" dir="rtl">جميع المنتجات</h2>
 
         <div className="relative group">
           {/* سهم اليسار */}
