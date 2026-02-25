@@ -130,7 +130,7 @@ export default function NavBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-[-80px] mt-3 w-64 bg-white shadow-2xl rounded-xl p-4 space-y-2 lg:hidden"
+            className="absolute right-[-120px] mt-3 w-64 bg-white shadow-2xl rounded-xl p-4 space-y-2 lg:hidden"
           >
             {mobilenavItems.map((item, index) => {
               if (item.children) {

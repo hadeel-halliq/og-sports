@@ -1,5 +1,4 @@
 import NavBar from "./NavBar"
-import profilePic from "../../assets/images/profilePic.png";
 import whiteLogo from "../../assets/images/whiteLogo.png"
 import blackLogo from "../../assets/images/blackLogo.png"
 import { ShoppingCart, Bell } from "lucide-react";
@@ -21,7 +20,6 @@ export default function Header() {
       <div className="container mx-auto py-4 px-12 flex justify-between ">
         <div className="flex gap-2 lg:gap-16 items-center">
           <div className="flex gap-3 items-center">
-            <img src={profilePic} alt="profilePic" className="w-12 " />
             <ShoppingCart className={iconStyle} />
             <Bell className={iconStyle} />
           </div>

@@ -10,3 +10,12 @@
   --color-secondary: #0f0f0f;
   --color-orange: rgba(245, 132, 4, 1);
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
