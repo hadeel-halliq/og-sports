@@ -1,11 +1,11 @@
-import homebg from "../../../assets/images/homebg.png";
+import aboutbg from "../../../assets/images/aboutbg.png"
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
     <section
       className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: `url(${homebg})` }}
+      style={{ backgroundImage: `url(${aboutbg})` }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
 

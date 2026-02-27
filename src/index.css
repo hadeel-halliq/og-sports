@@ -5,6 +5,10 @@
   font-family: "Almarai", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @theme  {
   --color-primary: #fff;
   --color-secondary: #0f0f0f;
