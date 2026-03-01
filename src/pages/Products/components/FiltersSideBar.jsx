@@ -101,15 +101,15 @@ export default function FiltersSideBar() {
         {/* عرض السعر بالدولار والليرة */}
         <div className="flex justify-between mt-6 text-sm">
           <div className="text-start">
-            <span className="block font-medium">${minPrice}</span>
-            <span className="block text-gray-500 text-xs" dir="rtl">
+            <span className="block font-bold text-xl">${minPrice}</span>
+            <span className="block text-gray-500 text-sm" dir="rtl">
               {(minPrice * exchangeRate).toLocaleString()} ل.س
             </span>
           </div>
 
           <div className="text-end">
-            <span className="block font-medium">${maxPrice}</span>
-            <span className="block text-gray-500 text-xs" dir="rtl">
+            <span className="block font-bold text-xl">${maxPrice}</span>
+            <span className="block text-gray-500 text-sm" dir="rtl">
               {(maxPrice * exchangeRate).toLocaleString()} ل.س
             </span>
           </div>

@@ -46,14 +46,7 @@ export default function StartYourJourney() {
       >
         بل نقدم تجربة تدعم قوتك، وتواكب طموحك، وتمنحك الثقة في كل خطوة.
       </motion.p>
-
-      <motion.div
-        variants={itemVariants}
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      >
-        <Button buttonName="ابدأ الان" />
-      </motion.div>
+      <Button buttonName="ابدأ الان" />
     </motion.div>
   );
 }
