@@ -3,7 +3,6 @@ import HeroSection from "./components/HeroSection";
 import ShopByCategory from "./components/ShopByCategory";
 import SpecialProducts from "./components/SpecialProducts";
 import AllProducts from "./components/AllProducts";
-import Statistics from "../AboutUs/components/Statistics";
 
 export default function Home() {
     return (
@@ -13,7 +12,6 @@ export default function Home() {
             <AboutSection/>
             <SpecialProducts/>
             <AllProducts/>
-            <Statistics/>
         </div>
     )
 }

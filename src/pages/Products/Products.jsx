@@ -1,5 +1,11 @@
+import FilterSection from "./components/FilterSection";
+import HeroSection from "./components/HeroSection";
+
 export default function Products() {
     return (
-        <div>Products Page</div>
+        <div>
+            <HeroSection/>
+            <FilterSection/>
+        </div>
     )
 }

@@ -1,6 +1,9 @@
 import HeroSection from "./components/HeroSection";
 import OurStory from "./components/OurStory";
+import StartYourJourney from "./components/StartYourJourney";
 import Statistics from "./components/Statistics";
+import TeamAndAcademies from "./components/TeamAndAcademies";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 export default function AboutUs() {
     return (
@@ -8,6 +11,9 @@ export default function AboutUs() {
             <HeroSection/>
             <OurStory/>
             <Statistics/>
+            <WhyChooseUs/>
+            <TeamAndAcademies/>
+            <StartYourJourney/>
         </div>
     )
 }
