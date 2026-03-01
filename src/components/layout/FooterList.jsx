@@ -4,7 +4,6 @@ export default function  FooterList({ title, items }) {
   return (
     <div
       dir="rtl"
-    //   className="text-center flex flex-col gap-2 w-[200px] sm:text-right sm:w-fit p-4 sm:p-3 md:p-0 text-primary cursor-pointer"
       className="text-center flex flex-col gap-2 w-[200px] sm:text-right sm:w-fit p-4 sm:p-3 md:p-0 text-primary cursor-pointer"
     >
       <h2 className="mb-4 text-xs lg:text-sm">{title}</h2>
@@ -17,7 +16,7 @@ export default function  FooterList({ title, items }) {
                 target="_blank"
                 className="flex items-center gap-1.5  text-xs lg:text-sm"
               >
-                <img src={item.icon} className="w-[15px] h-[15px]" />
+                <img src={item.icon} className="w-[15px] h-[15px] ml-4" />
                 {item.label}
               </a>
             ) : item.external === false ? (
