@@ -1,11 +1,11 @@
-import clothbg from "../../../assets/images/clothbg.png";
+import productbg from "../../../assets/images/productbg.png"
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
     return (
         <section
-            className="relative w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-            style={{ backgroundImage: `url(${clothbg})` }}
+            className="relative w-full min-h-screen bg-cover  bg-no-repeat overflow-hidden"
+            style={{ backgroundImage: `url(${productbg})` }}
         >
             {/* overlay */}
             <div className="absolute inset-0 bg-black/40"></div>

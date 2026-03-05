@@ -1,4 +1,4 @@
-import whiteLogo from "../../assets/images/whiteLogo.png"
+import whiteLogo from "../../assets/images/whiteLogo.jpg"
 import facebook from "../../assets/images/facebook.png";
 import instagram from "../../assets/images/instagram.png";
 import pinterest from "../../assets/images/pinterest.png";
@@ -48,7 +48,7 @@ export default function Footer() {
   return (
     <div className="bg-secondary">
       <div className="container mx-auto px-12 border-t border-t-primary">
-        <div className="pt-5 flex flex-col gap-6 items-center sm:flex sm:flex-row-reverse sm:items-center justify-between">
+        <div className="pt-5 flex flex-col gap-6 sm:flex sm:flex-row-reverse sm:items-center md:items-start  justify-between">
           <div className="hidden  md:flex flex-col items-center gap-3 p-2.5">
             <img
               src={whiteLogo}

@@ -45,7 +45,7 @@ export default function FiltersSideBar() {
   const maxPercent = ((maxPrice - min) / (max - min)) * 100;
 
   return (
-    <div className="bg-[rgba(248,248,248,1)] rounded-xl p-6 space-y-8 md:sticky md:top-24 h-fit shadow-sm">
+    <div className="bg-[rgba(248,248,248,1)] rounded-sm p-6 space-y-8 md:sticky md:top-24 h-fit shadow-sm">
 
       {/* =========================
           عنوان السايدبار
@@ -131,7 +131,36 @@ export default function FiltersSideBar() {
                 onChange={() =>
                   toggleItem(size, selectedSizes, setSelectedSizes)
                 }
-                className="w-4 h-4 accent-[rgba(217,217,217,1)] cursor-pointer"
+                className="
+                  w-5 h-5
+                  appearance-none
+                  bg-[rgba(217,217,217,1)]
+                  rounded-sm
+                  cursor-pointer
+                  relative
+                  transition-all duration-200
+                  checked:bg-black
+
+                  after:content-['']
+                  after:absolute
+                  after:inset-0
+                  after:flex
+                  after:items-center
+                  after:justify-center
+                  after:scale-0
+                  after:transition-transform
+                  after:duration-200
+
+                  checked:after:scale-100
+                "
+                style={{
+                  backgroundImage: selectedSizes.includes(size)
+                    ? `url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E")`
+                    : "none",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "14px",
+                }}
               />
               <span>{size}</span>
             </label>
@@ -162,7 +191,23 @@ export default function FiltersSideBar() {
                 onChange={() =>
                   toggleItem(cat, selectedCategories, setSelectedCategories)
                 }
-                className="w-4 h-4 accent-black cursor-pointer"
+                className="
+                  w-5 h-5
+                  appearance-none
+                  bg-[rgba(217,217,217,1)]
+                  rounded-sm
+                  cursor-pointer
+                  transition-all duration-200
+                  checked:bg-black
+                "
+                style={{
+                  backgroundImage: selectedCategories.includes(cat)
+                    ? `url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E")`
+                    : "none",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "14px",
+                }}
               />
               <span>{cat}</span>
             </label>
@@ -199,20 +244,38 @@ export default function FiltersSideBar() {
               {/* المربع الملون */}
               <div
                 className={`
-                  relative w-4 h-4 border border-gray-400 transition
+                  relative w-5 h-5
                   ${color.class}
-                  peer-checked:ring-2 peer-checked:ring-black
+                  rounded-sm
+                  transition-all duration-200
+                  flex items-center justify-center
+                  cursor-pointer
+
+                  peer-checked:scale-105
+                  peer-checked:brightness-110
+                  peer-checked:shadow-md
                 `}
               >
-                {/* علامة الصح */}
                 <svg
-                  className="absolute inset-0 m-auto w-4 h-4 text-white hidden peer-checked:block"
+                  className="
+                    w-3 h-3
+                    text-white
+                    opacity-0
+                    scale-0
+                    transition-all duration-200
+                    peer-checked:opacity-100
+                    peer-checked:scale-100
+                  "
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="3"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
                 </svg>
               </div>
 
@@ -230,13 +293,32 @@ export default function FiltersSideBar() {
 
         <div className="space-y-3 text-sm">
           {["Nike", "Adidas", "Puma", "Chanel", "Dior"].map((brand) => (
-            <label key={brand} className="flex items-center justify-between cursor-pointer">
+            <label
+              key={brand}
+              className="flex items-center justify-between cursor-pointer"
+            >
               {/* checkbox يسار */}
               <input
                 type="checkbox"
                 checked={selectedBrands.includes(brand)}
                 onChange={() => toggleBrand(brand)}
-                className="w-4 h-4 accent-black"
+                className="
+                    w-5 h-5
+                    appearance-none
+                    bg-[rgba(217,217,217,1)]
+                    rounded-sm
+                    cursor-pointer
+                    transition-all duration-200
+                    checked:bg-black
+                  "
+                style={{
+                  backgroundImage: selectedBrands.includes(brand)
+                    ? `url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E")`
+                    : "none",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "14px",
+                }}
               />
 
               {/* اسم الماركة بالنص */}
@@ -247,13 +329,28 @@ export default function FiltersSideBar() {
                 type="checkbox"
                 checked={selectedBrands.includes(brand)}
                 onChange={() => toggleBrand(brand)}
-                className="w-4 h-4 accent-black"
+                className="
+            w-5 h-5
+            appearance-none
+            bg-[rgba(217,217,217,1)]
+            rounded-sm
+            cursor-pointer
+            transition-all duration-200
+            checked:bg-black
+          "
+                style={{
+                  backgroundImage: selectedBrands.includes(brand)
+                    ? `url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E")`
+                    : "none",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "14px",
+                }}
               />
             </label>
           ))}
         </div>
       </div>
-
       {/* =========================
           ستايل الرينج بدون CSS خارجي
       ========================= */}
@@ -287,3 +384,5 @@ export default function FiltersSideBar() {
     </div>
   );
 }
+
+

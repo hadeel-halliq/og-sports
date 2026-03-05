@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
         <motion.img
           src={run}
           alt="run"
-          className="absolute bottom-0 left-1/4 -translate-x-1/2 w-[110px] h-[210px]"
+          className="absolute bottom- left-1/7 -translate-x-1/2 w-[110px] h-[210px]"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
