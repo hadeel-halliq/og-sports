@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home/Home'
 import AboutUs from '../pages/AboutUs/AboutUs'
 import Products from '../pages/Products/Products'
+import ProductDetailes from '../pages/Products/ProductDetailes'
 import ContactUs from '../pages/ContactUS/ContactUs'
 import LogIn from '../pages/LogIn/LogIn'
 import SignUp from '../pages/SignUp/SignUp'
@@ -19,6 +20,7 @@ export default function AppRoutes() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/products' element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetailes />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/notifications' element={<Notification/>}/>

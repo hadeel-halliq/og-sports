@@ -11,7 +11,7 @@ body {
 
 @theme  {
   --color-primary: #fff;
-  --color-secondary: #0f0f0f;
+  --color-secondary: rgba(0, 0, 0, 1);
   --color-orange: rgba(245, 132, 4, 1);
 }
 
