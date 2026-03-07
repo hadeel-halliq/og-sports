@@ -36,12 +36,12 @@ const textVariants = {
 export default function AboutSection() {
   return (
     <div className="bg-[rgba(248,248,248,1)] overflow-hidden">
-      <div className="container mx-auto px-12 py-12 grid grid-cols-1 lg:grid-cols-2 place-items-center my-20">
+      <div className="container mx-auto px-12 py-12 grid grid-cols-1 lg:grid-cols-2 gap-[-150px] place-items-center my-20">
         
         <motion.img
           src={aboutpic}
           alt="clothespic"
-          className="w-[300px] h-[300px]"
+          className="w-[400px] h-[300px]"
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
@@ -49,7 +49,7 @@ export default function AboutSection() {
         />
 
         <motion.div
-          className="h-80 w-[300px]"
+          className="h-80 w-[500px] font-light"
           dir="rtl"
           variants={textVariants}
           initial="hidden"
@@ -70,7 +70,7 @@ export default function AboutSection() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 250 }}
           >
-            <Button buttonName="تعرف علينا أكثر" />
+            <Button buttonName="تعرف علينا أكثر"    width="w-[170px]"/>
           </motion.div>
         </motion.div>
 
