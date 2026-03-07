@@ -28,7 +28,7 @@ export default function NavBar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const { pathname } = useLocation();
-  const isDarkHeader = pathname === "/cart" || pathname === "/notifications";
+  const isDarkHeader = pathname === "/cart" || pathname === "/notifications" || pathname.startsWith("/products/");
   const navLinksColor = isDarkHeader ? "text-primary" : "text-secondary";
   const mobileIconColor = isDarkHeader ? "text-primary" : "text-secondary";
   const mobileLinksColor = "text-black";

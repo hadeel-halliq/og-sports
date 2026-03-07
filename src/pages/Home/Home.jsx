@@ -3,6 +3,7 @@ import HeroSection from "./components/HeroSection";
 import ShopByCategory from "./components/ShopByCategory";
 import SpecialProducts from "./components/SpecialProducts";
 import AllProducts from "./components/AllProducts";
+import OpinionSection from "../../components/common/OpinionSection"
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <AboutSection/>
             <SpecialProducts/>
             <AllProducts/>
+            <OpinionSection/>
         </div>
     )
 }

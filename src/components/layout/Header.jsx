@@ -1,6 +1,6 @@
 import NavBar from "./NavBar"
-import whiteLogo from "../../assets/images/whiteLogo.jpg"
-import blackLogo from "../../assets/images/blackLogo.webp"
+import whiteLogo from "../../assets/images/whiteLogo.png"
+import blackLogo from "../../assets/images/blacLogo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const { pathname } = useLocation();
-  const isDarkHeader = pathname === "/cart" || pathname === "/notifications" || pathname.startsWith("/products/");;
+  const isDarkHeader = pathname === "/cart" || pathname === "/notifications" || pathname.startsWith("/products/");
   const headerBg = isDarkHeader
     ? "bg-[linear-gradient(90deg,rgba(18,18,18,0)_0%,#121212_6%,#121212_94%,rgba(18,18,18,0)_100%)]"
     : "bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,#FFFFFF_6%,#FFFFFF_94%,rgba(255,255,255,0)_100%)]";

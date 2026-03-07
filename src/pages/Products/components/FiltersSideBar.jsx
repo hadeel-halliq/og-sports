@@ -102,14 +102,14 @@ export default function FiltersSideBar() {
         <div className="flex justify-between mt-6 text-sm">
           <div className="text-start">
             <span className="block font-bold text-xl">${minPrice}</span>
-            <span className="block text-gray-500 text-sm" dir="rtl">
+            <span className="block text-gray-500 text-xs" dir="rtl">
               {(minPrice * exchangeRate).toLocaleString()} ل.س
             </span>
           </div>
 
           <div className="text-end">
             <span className="block font-bold text-xl">${maxPrice}</span>
-            <span className="block text-gray-500 text-sm" dir="rtl">
+            <span className="block text-gray-500 text-xs" dir="rtl">
               {(maxPrice * exchangeRate).toLocaleString()} ل.س
             </span>
           </div>
@@ -174,7 +174,7 @@ export default function FiltersSideBar() {
       <div>
         <h3 className="font-semibold mb-4" dir="rtl">الفئة</h3>
 
-        <div className="grid grid-cols-2 gap-y-3 gap-x-6 text-sm" dir="rtl">
+        <div className="grid grid-cols-2 gap-y-3 gap-x-6 md:text-sm lg:text-xs" dir="rtl">
           {[
             "كل جديد",
             "العروض",

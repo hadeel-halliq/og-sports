@@ -8,7 +8,7 @@ export default function Button({ buttonName, onClick, buttonColor, width }) {
   const widthClass = width ? width : "w-fit";
   return (
     <motion.button
-      className={`${buttonStyle} inline-block ${widthClass} px-3 py-1.5 rounded-sm cursor-pointer`}
+      className={`${buttonStyle} inline-block ${widthClass} px-3 py-2 rounded-lg cursor-pointer`}
       onClick={onClick}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}

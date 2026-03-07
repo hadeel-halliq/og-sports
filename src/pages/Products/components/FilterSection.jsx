@@ -45,7 +45,7 @@ export default function FilterSection() {
   return (
     <div className="min-h-screen py-10">
       <div className="container mx-auto px-12">
-        <div className="grid grid-cols-1 md:grid-cols-[400px_1fr] lg:grid-cols-[500px_1fr] xl:grid-cols-[790px_1fr] gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] lg:grid-cols-[500px_1fr] xl:grid-cols-[840px_1fr] gap-24">
           
           <div
             className="order-1 md:order-2"

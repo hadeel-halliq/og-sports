@@ -51,7 +51,7 @@ export default function ProductsContent() {
             animate="visible"
             whileHover="hover"
             onClick={() => navigate(`/products/${product.id}`)}
-            className="shadow-sm px-4 py-4 w-[260px] xl:w-[260px] bg-[rgba(248,248,248,1)] flex flex-col"
+            className="shadow-sm px-3 py-3 w-[260px] xl:w-[280px] bg-[rgba(248,248,248,1)] flex flex-col"
           >
             {/* صورة الكارد */}
 
